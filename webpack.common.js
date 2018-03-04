@@ -5,7 +5,7 @@ module.exports = {
   entry: ['./src/index.js'],
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'static/js/[name].js'
+    filename: 'static/js/[name]-[hash].js'
   },
   module: {
     rules: [
@@ -32,6 +32,12 @@ module.exports = {
               modules: true
             }
           }
+        ]
+      },
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: [
+          { loader: 'file-loader' }
         ]
       }
     ]

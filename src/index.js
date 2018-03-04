@@ -1,5 +1,6 @@
 import React from 'react'
 import { render } from 'react-dom'
+import registerServiceWorker from './register-service-worker';
 import Root from './root'
 import './root.css'
 
@@ -13,3 +14,5 @@ if (module.hot) {
     render(<NextRoot />, target);
   });
 }
+
+registerServiceWorker();
